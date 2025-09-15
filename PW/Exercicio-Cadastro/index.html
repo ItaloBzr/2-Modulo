@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Cadastro de Funcionários</title>
+</head>
+
+<body>
+    <div class="bloco">
+
+        <div class="header">
+            <h1>Cadastro de Funcionários</h1>
+            <button class="princip" onclick="abrirlista()">Incluir</button>
+        </div>
+
+        <div class="formulario" id="formulario" style="display: none">
+            <input type="text" id="nome" placeholder="Nome" required />
+            <input type="number" id="salario" placeholder="Salário" required />
+            <input type="text" id="funcao" placeholder="Função" required />
+            <button onclick="adicionarFuncionario()">Adicionar</button>
+            <button onclick="fecharlista()">Fechar</button>
+        </div>
+        
+        <div class="lista">
+            <table id="tabelaFuncionarios">
+                <tr>
+                    <th>Nome</th>
+                    <th>Salário(R$)</th>
+                    <th>Função</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

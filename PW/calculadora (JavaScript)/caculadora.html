@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Minha Calculadora</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    body {
+      height: 100vh;
+      width: 100%;
+      background-color: gainsboro;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #1877f2;
+      display: flex;
+      height: 10%;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header h1 {
+      color: white;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      height: calc(100% - 10%);
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+      background-color: white;
+      padding: 30px 20px;
+      border-radius: 12px;
+      border: 1px solid #d0d0d0;
+    }
+
+    .textos {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input[type="number"] {
+      width: 350px;
+      height: 40px;
+      border-radius: 6px;
+      border: 1px solid #ccd0d5;
+      padding: 8px;
+      font-size: 16px;
+      background-color: #f5f6f7;
+    }
+    
+
+    .btn {
+      display: grid;
+      grid-template-columns: repeat(2, 170px);
+      gap: 15px;
+    }
+
+    .btn button {
+      height: 45px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      color: white;
+      background-color: #1877f2;
+      font-size: 16px;
+    }
+
+    .btn button:hover {
+      background-color: #145dbf;
+    }
+
+    #resultado {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+      margin-top: 10px;
+    }
+  </style>
+  <script src="calculadora.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Minha Calculadora</h1>
+  </header>
+
+  <div class="content">
+    <h2 id="resultado">Resultado = </h2>
+    <div class="container">
+      <div class="textos">
+        <input type="number" placeholder="Primeiro Número" id="n1" />
+        <input type="number" placeholder="Segundo Número" id="n2" />
+      </div>
+
+      <div class="btn">
+        <button onclick="somar()">Somar</button>
+        <button onclick="subtrair()">Subtrair</button>
+        <button onclick="multiplicar()">Multiplicar</button>
+        <button onclick="dividir()">Dividir</button>
+        <button onclick="deletar()">Deletar</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
