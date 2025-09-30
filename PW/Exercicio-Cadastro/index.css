@@ -26,7 +26,7 @@ body {
 .princip {
     border-radius: 12px;
     border: none;
-    background-color: blue;
+    background-color: #A020F0;
     padding: 10px 25px;
     color: white;
     font-size: 20px;
@@ -48,7 +48,7 @@ th {
     font-size: 20px;
     padding: 6px 0px;
     color: white;
-    background-color: blue;
+    background-color: #A020F0;
 }
 td {
     font-size: 15px;
@@ -66,8 +66,8 @@ input {
 }
 button {
     padding: 5px 6px;
-    background-color: gainsboro;
-    color: black;
+    background-color: #A020F0;
+    color: white;
     border: 1px solid;
     font-size: 15px;
     border-radius: 5px;

@@ -1,5 +1,4 @@
-let edit = 0;
-
+let edit = null;
 
 function abrirlista() {
     document.getElementById('formulario').style.display = 'block';
@@ -7,9 +6,9 @@ function abrirlista() {
 
 function fecharlista() {
     document.getElementById('formulario').style.display = 'none';
-    document.getElementById('nome').value = ""
-    document.getElementById('salario').value = ""
-    document.getElementById('funcao').value = ""
+    document.getElementById('nome').value = "";
+    document.getElementById('salario').value = "";
+    document.getElementById('funcao').value = "";
 }
 
 function adicionarFuncionario() {
@@ -19,24 +18,22 @@ function adicionarFuncionario() {
 
     const tabela = document.getElementById('tabelaFuncionarios');
     
-
-    if(edit != 0){
+    if (edit !== null) {
         edit.cells[0].innerText = nome;
         edit.cells[1].innerText = salario;
         edit.cells[2].innerText = funcao;
 
         fecharlista();
-    }else{
-        
+        edit = null;
+    } else {
         const novaLinha = tabela.insertRow();
         novaLinha.insertCell(0).innerText = nome;
         novaLinha.insertCell(1).innerText = salario;
         novaLinha.insertCell(2).innerText = funcao;
         novaLinha.insertCell(3).innerHTML = '<button onclick="editarFuncionario(this)">Editar</button>';
         novaLinha.insertCell(4).innerHTML = '<button onclick="excluirFuncionario(this)">Excluir</button>';
-        fecharlista()
+        fecharlista();
     }
-
 }
 
 function excluirFuncionario(button) {
@@ -44,17 +41,17 @@ function excluirFuncionario(button) {
     row.parentNode.removeChild(row);
 }
 
-function editarFuncionario(button){
+function editarFuncionario(button) {
     const row = button.parentNode.parentNode;
-    edit = 1;
+    edit = row;
 
     const nome = row.cells[0].innerText;
     const salario = row.cells[1].innerText;
     const funcao = row.cells[2].innerText;
 
-    document.getElementById('nome').value = nome
-    document.getElementById('salario').value = salario
-    document.getElementById('funcao').value = funcao
+    document.getElementById('nome').value = nome;
+    document.getElementById('salario').value = salario;
+    document.getElementById('funcao').value = funcao;
 
-    abrirlista()
+    abrirlista();
 }
