@@ -29,18 +29,15 @@ include("conexao.php");
                 }
                 ?>
 
-
                 <div class="card-mt-5">
                     <div class="card-header">
                         <?php // apaga isso
                         // <h4> Cheklist quiosque</h4> 
-                        // apaga isso ?>
+                        // apaga isso 
+                        ?>
                     </div>
                     <div class="card-body">
                         <div class="card-mt-5">
-
-
-
 
                             <section>
 
@@ -50,18 +47,11 @@ include("conexao.php");
                                         <th>Nome</th>
                                         <th>Idade</th>
                                         <th>CPF</th>
-                                        <th>Email</th>
-                                        <th>Tell</th>
-                                        <th>Cel</th>
                                         <th>Abrir</th>
                                         <th>Dobrar</th>
 
-
-
-
                                         <th> &nbsp; </th>
                                     </tr>
-
 
                                     <?php
                                     $consulta = $pdo->prepare("SELECT * from demo;");
@@ -74,20 +64,14 @@ include("conexao.php");
                                         echo "<td>" . $linha["name"] . "</td>";
                                         echo "<td>" . $linha["idade"] . "</td>";
                                         echo "<td>" . $linha["cpf"] . "</td>";
-                                        echo "<td>" . $linha["email"] . "</td>";
-                                        echo "<td>" . $linha["tell"] . "</td>";
-                                        echo "<td>" . $linha["Cel"] . "</td>";
                                         echo "<td>" . $linha["abrir"] . "</td>";
                                         echo "<td>" . $linha["dobrar"] . "</td>";
                                         echo "<td>";
-
-                                        echo "<a href=excluirCheck.php?id=$linha[0]> Excluir </a>";
+                                        echo "<a href='excluirCheck.php?name=" . urlencode($linha['name']) . "'>Excluir</a>";
                                         echo "</td>";
                                         echo "</tr>";
-
                                     }
                                     ?>
-
 
                                 </table>
 
@@ -101,15 +85,11 @@ include("conexao.php");
                             </section>
                             <section>
 
-
-
-                                <script
-                                    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+                                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
                                     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
                                     crossorigin="anonymous"></script>
                                 <script src="https://code.jquery.com/jquery-3.6.1.js"
-                                    integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
-                                    crossorigin="anonymous"></script>
+                                    integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 </body>
 
 </html>
