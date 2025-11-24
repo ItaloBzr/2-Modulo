@@ -12,6 +12,21 @@ include("conexao.php");
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        table.table th,
+        table.table td {
+            padding: 10px 15px;
+            border: 1px solid;
+            text-align: left;
+            color: #222;
+            font-weight: 500;
+        }
+
+        h1{
+            color: #1877f2;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -47,9 +62,9 @@ include("conexao.php");
                                         <th>Nome</th>
                                         <th>Idade</th>
                                         <th>CPF</th>
-                                        <th>Abrir</th>
-                                        <th>Dobrar</th>
-
+                                        <th>RG</th>
+                                        <th>EMAIL</th>
+                                        <th>CELULAR</th>
                                         <th> &nbsp; </th>
                                     </tr>
 
@@ -64,8 +79,9 @@ include("conexao.php");
                                         echo "<td>" . $linha["name"] . "</td>";
                                         echo "<td>" . $linha["idade"] . "</td>";
                                         echo "<td>" . $linha["cpf"] . "</td>";
-                                        echo "<td>" . $linha["abrir"] . "</td>";
-                                        echo "<td>" . $linha["dobrar"] . "</td>";
+                                        echo "<td>" . $linha["rg"] . "</td>";
+                                        echo "<td>" . $linha["email"] . "</td>";
+                                        echo "<td>" . $linha["celular"] . "</td>";
                                         echo "<td>";
                                         echo "<a href='excluirCheck.php?name=" . urlencode($linha['name']) . "'>Excluir</a>";
                                         echo "</td>";

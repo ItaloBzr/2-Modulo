@@ -1,0 +1,13 @@
+CREATE DATABASE bdpw3;
+USE bdpw3;
+
+CREATE TABLE demo (
+    name VARCHAR(80),
+    idade INT,
+    cpf VARCHAR(11),
+    rg VARCHAR(11),
+    email VARCHAR(70),
+    celular VARCHAR(15),
+    abrir VARCHAR(40),
+    dobrar VARCHAR(40)
+);
