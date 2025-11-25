@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiosque</title>
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      display: flex;
+      flex-direction: column; 
+      height: 100vh;
+    }
+    h2 {
+      height: 60px;
+      background-color: #1877f2;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    main {
+      flex: 1; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    form {
+      padding: 20px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      background-color: white;
+      border-radius: 5px;
+      width: 350px; 
+    }
+    .grupo-campo {
+      width: 100%;
+    }
+    .grupo-campo input {
+      width: 100%;
+      padding: 8px 10px;
+      font-size: 16px;
+      border: 1px solid #1877f2;
+      border-radius: 5px;
+      outline-color: #1877f2; 
+      box-sizing: border-box;
+    }
+    .grupo-campo input::placeholder {
+      color: #999999;
+    }
+    .btn-primary {
+      background-color: #1877f2;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .btn-primary:hover {
+      background-color: #145dbf;
+    }
+  </style>
+</head>
+
+<?php 
+  include("conexao.php");
+  echo '<a href="index.php">Sair</a>';
+?>
+
+<body>
+  <h2 class="titulo-formulario">Entre na sua conta</h2>
+  <main>
+    <form action="consultaCheck.php" method="post" id="formulario-usuario">
+
+        <div class="grupo-campo" id="campo-nome">
+        <input type="text" id="nome" name="nome" placeholder="Nome" required />
+        </div>
+
+        <div class="grupo-campo" id="campo-senha">
+        <input type="password" id="senha" name="senha" placeholder="Senha" required />
+        </div>
+
+        <div class="grupo-campo" id="campo-submit">
+        <input type="submit" name="submit" class="btn-primary" value="Entrar" />
+        </div>
+    </form>
+  </main>
+</body>
+</html>

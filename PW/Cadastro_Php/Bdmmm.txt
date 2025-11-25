@@ -1,0 +1,8 @@
+CREATE DATABASE bdmmm;
+USE bdmmm;
+
+CREATE TABLE demo (
+    name VARCHAR(80),
+    email VARCHAR(70),
+    senha VARCHAR(15)
+);
